@@ -4,6 +4,8 @@ const app = express();
 let items =["Buy food " , " eat","some some example"];
 app.set('view engine', 'ejs'); // always place it below const app.
 app.use(bodyParser.urlencoded({extended: true}));
+app.use(express.static("public"));
+
 app.get("/", (req, res) => {
     
     let today = new Date();
